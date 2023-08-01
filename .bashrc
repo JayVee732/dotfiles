@@ -25,3 +25,6 @@ if [ -d ~/.bashrc.d ]; then
 fi
 
 unset rc
+
+alias u="sudo -S dnf distro-sync -y --refresh && sudo -S dnf update --refresh && flatpak update --appstream && flatpak update -y"
+alias cls="clear"
