@@ -64,6 +64,7 @@ sudo systemctl enable libvirtd
 sudo usermod -aG libvirt $(whoami)
 
 # Harden the Kernel with Kicksecure's patches
+# TODO: Remove the disable of Bluetooth from these
 sudo curl https://raw.githubusercontent.com/Kicksecure/security-misc/master/etc/modprobe.d/30_security-misc.conf -o /etc/modprobe.d/30_security-misc.conf
 sudo curl https://raw.githubusercontent.com/Kicksecure/security-misc/master/etc/sysctl.d/30_security-misc.conf -o /etc/sysctl.d/30_security-misc.conf
 sudo curl https://raw.githubusercontent.com/Kicksecure/security-misc/master/etc/sysctl.d/30_silent-kernel-printk.conf -o /etc/sysctl.d/30_silent-kernel-printk.conf
@@ -93,4 +94,8 @@ sudo firewall-cmd --permanent --remove-port=1025-65535/tcp
 sudo firewall-cmd --permanent --remove-service=mdns
 sudo firewall-cmd --permanent --remove-service=ssh
 sudo firewall-cmd --permanent --remove-service=samba-client
+
+# Add services I use
+sudo firewall-cmd --zone=public --add-service=syncthing --permanent
+sudo firewall-cmd --zone=public --add-service=kdeconnect --permanent
 sudo firewall-cmd --reload
