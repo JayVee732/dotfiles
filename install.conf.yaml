@@ -1,9 +1,8 @@
 - clean: ['~']
 - link:
     ~/.gitconfig: gitconfig
-      force:true
     ~/.bashrc: bashrc
-      force:true
+
 - shell: 
     - [git submodule update --init --recursive, Installing submodules]
     - command: brew bundle install --file=Brewfile
