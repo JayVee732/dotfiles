@@ -1,3 +1,16 @@
-- clean: []
-- link: {}
-- shell: []
+- clean: ['~']
+- link:
+    ~/.gitconfig: gitconfig
+      force:true
+    ~/.bashrc: bashrc
+      force:true
+- shell: 
+    - [git submodule update --init --recursive, Installing submodules]
+    - command: brew bundle install --file=Brewfile
+      description: Restoring from Brewfile
+      stdout: true
+      stderr: true
+    - command: flatpak install flathub -y -u $(cat Flatfile)
+      stdout: true
+      stderr: true
+      description: Restoring from Flatfile
