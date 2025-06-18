@@ -7,14 +7,13 @@
 - create:
     - ~/Projects
     - ~/Applications/AppImages
+    - ~/.var/app/io.freetubeapp.FreeTube/config/FreeTube/
     - ~/.var/app/org.musicbrainz.Picard/config/MusicBrainz/
     - ~/.var/app/org.keepassxc.KeePassXC/config/keepassxc/
 
 - link:
     ~/.gitconfig: gitconfig
     ~/.bashrc: bashrc
-    ~/.var/app/org.musicbrainz.Picard/config/MusicBrainz/Picard.ini: Picard/Picard.ini
-    ~/.var/app/org.keepassxc.KeePassXC/config/keepassxc/keepassxc.ini: Keepassxc/keepassxc.ini
     
 - shell: 
     - command: brew bundle install --file=Brewfile
@@ -25,3 +24,9 @@
       stdout: true
       stderr: true
       description: Restoring from Flatfile
+    - command: cp Freetube/* ~/.var/app/io.freetubeapp.FreeTube/config/FreeTube/
+      description: Copy files for FreeTube
+    - command: cp Picard/* ~/.var/app/org.musicbrainz.Picard/config/MusicBrainz/
+      description: Copy files for Picard
+    - command: cp Keepassxc/* ~/.var/app/org.keepassxc.KeePassXC/config/keepassxc/
+      description: Copy files for Keepassxc
