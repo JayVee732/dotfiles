@@ -4,13 +4,17 @@
 
 - clean: ['~']
 
-- link:
-    ~/.gitconfig: gitconfig
-    ~/.bashrc: bashrc
-
 - create:
     - ~/Projects
     - ~/Applications/AppImages
+    - ~/.var/app/org.musicbrainz.Picard/config/MusicBrainz/
+    - ~/.var/app/org.keepassxc.KeePassXC/config/keepassxc/
+
+- link:
+    ~/.gitconfig: gitconfig
+    ~/.bashrc: bashrc
+    ~/.var/app/org.musicbrainz.Picard/config/MusicBrainz/Picard.ini: Picard/Picard.ini
+    ~/.var/app/org.keepassxc.KeePassXC/config/keepassxc/keepassxc.ini: Keepassxc/keepassxc.ini
     
 - shell: 
     - command: brew bundle install --file=Brewfile
