@@ -1,4 +1,5 @@
 brew "btop"
+brew "flac"
 brew "hugo"
 brew "imagemagick"
 brew "libvpx"
