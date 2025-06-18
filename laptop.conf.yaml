@@ -1,0 +1,5 @@
+- shell: 
+    - command: flatpak install -y --system $(cat laptopFlatfile)
+      stdout: true
+      stderr: true
+      description: Restoring laptop specific Flatfile

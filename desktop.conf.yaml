@@ -1,0 +1,5 @@
+- shell: 
+    - command: flatpak install -y --system $(cat desktopFlatfile)
+      stdout: true
+      stderr: true
+      description: Restoring desktop specific Flatfile
