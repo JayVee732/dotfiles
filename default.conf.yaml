@@ -10,12 +10,8 @@
     - ~/.var/app/io.freetubeapp.FreeTube/config/FreeTube/
     - ~/.var/app/org.musicbrainz.Picard/config/MusicBrainz/
     - ~/.var/app/org.keepassxc.KeePassXC/config/keepassxc/
-
-- link:
-    ~/.gitconfig: gitconfig
-    ~/.bashrc: bashrc
     
-- shell: 
+- shell:
     - command: brew bundle install --file=Brewfile
       description: Restoring from Brewfile
       stdout: true
@@ -28,9 +24,17 @@
       stdout: true
       stderr: true
       description: Creating Arch Distrobox
-    - command: cp Freetube/* ~/.var/app/io.freetubeapp.FreeTube/config/FreeTube/
-      description: Copy files for FreeTube
-    - command: cp Picard/* ~/.var/app/org.musicbrainz.Picard/config/MusicBrainz/
-      description: Copy files for Picard
-    - command: cp Keepassxc/* ~/.var/app/org.keepassxc.KeePassXC/config/keepassxc/
-      description: Copy files for Keepassxc
+    - command: sudo flatpak override io.freetubeapp.FreeTube --filesystem=${PWD}/Freetube
+      description: Flatpak override for FreeTube
+    - command: sudo flatpak override org.musicbrainz.Picard --filesystem=${PWD}/Picard
+      description: Flatpak override for Picard
+    - command: sudo flatpak override org.keepassxc.KeePassXC --filesystem=${PWD}/Keepassxc
+      description: Flatpak override for KeepassXC
+
+- link:
+    ~/.gitconfig: gitconfig
+    ~/.bashrc: bashrc
+    ~/.var/app/io.freetubeapp.FreeTube/config/FreeTube/profiles.db: Freetube/profiles.db
+    ~/.var/app/io.freetubeapp.FreeTube/config/FreeTube/settings.db: Freetube/settings.db
+    ~/.var/app/org.musicbrainz.Picard/config/MusicBrainz/Picard.ini: Picard/Picard.ini
+    ~/.var/app/org.keepassxc.KeePassXC/config/keepassxc/keepassxc.ini: Keepassxc/keepassxc.ini
