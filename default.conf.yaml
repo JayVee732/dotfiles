@@ -24,6 +24,10 @@
       stdout: true
       stderr: true
       description: Restoring from Flatfile
+    - command: distrobox assemble create --replace --file Distroboxfile --name arch
+      stdout: true
+      stderr: true
+      description: Creating Arch Distrobox
     - command: cp Freetube/* ~/.var/app/io.freetubeapp.FreeTube/config/FreeTube/
       description: Copy files for FreeTube
     - command: cp Picard/* ~/.var/app/org.musicbrainz.Picard/config/MusicBrainz/
