@@ -3,3 +3,7 @@
       stdout: true
       stderr: true
       description: Restoring desktop specific Flatfile
+    - command: distrobox assemble create --replace --file psbbn --name psbbn
+      stdout: true
+      stderr: true
+      description: Creating Arch Distrobox for use with PSBBN installer

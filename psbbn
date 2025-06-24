@@ -1,0 +1,6 @@
+[psbbn]
+additional_packages="archlinux-keyring axel imagemagick xxd python pyenv python-pip nodejs npm bc rsync curl zip wget chromium exfatprogs"
+image=ghcr.io/ublue-os/arch-toolbox:latest
+pull=true
+root=true
+replace=true
