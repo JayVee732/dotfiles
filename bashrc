@@ -35,7 +35,7 @@ alias dosbox='flatpak run com.dosbox_x.DOSBox-X'
 alias gearlever='flatpak run it.mijorus.gearlever'
 
 # Commands
-alias yt='yt-dlp -f bestvideo-bestaudio/best --add-metadata -ic'
-alias yta='yt-dlp -f bestvideo-bestaudio/best --add-metadata -xic'
+alias yt='yt-dlp -f "bv+ba/b" --add-metadata -ic'
+alias yta='yt-dlp -f "ba" --add-metadata -ic'
 alias gap='git add -p'
 alias psbbn='distrobox enter --root arch-root'
