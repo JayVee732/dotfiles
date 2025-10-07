@@ -1,5 +1,6 @@
 [user]
 	email = work@jamiehiggins.dev
 	name = JayVee732
+	signingkey = 1FE2C50345619C26
 [init]
 	defaultBranch = main

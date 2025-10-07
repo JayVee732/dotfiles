@@ -39,3 +39,5 @@ alias yt='yt-dlp -f "bv+ba/b" --add-metadata -ic'
 alias yta='yt-dlp -f "ba" --add-metadata -ic'
 alias gap='git add -p'
 alias psbbn='distrobox enter --root psbbn'
+
+export GPG_TTY=$(tty)
